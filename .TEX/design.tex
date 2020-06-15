@@ -1,0 +1,30 @@
+% Design
+%% Title
+\newcommand{\spacecaps}[1]{\textls[200]{\MakeUppercase{#1}}}
+\newcommand{\spacesc}[1]{\textls[50]{\textsc{\MakeLowercase{#1}}}}
+\makeatletter
+\def\@maketitle{
+\pagestyle{plain}
+\raggedright
+\begin{center}
+{%
+  \ifthenelse{\equal{\vTitleimage}{null}}
+    {}%
+    {%
+      \includegraphics[width=0.25\textwidth]
+        {\vTitleimage}\par\vspace{2ex}
+    }%
+}%
+{\Large \bfseries \spacecaps{ \@title } }\\
+{\spacesc{ \normalsize \vSubtitle }\\[4ex]}
+{\small  \@author}\\
+{\small \textit{ \@date } }\\[8ex]
+\end{center}}
+\makeatother
+
+%% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\runauthor}
+\lhead{\runtitle}
+\rfoot{Page \thepage~of \pageref{LastPage}}

@@ -1,0 +1,40 @@
+% Define Variables
+\newcommand{\vCensorDocument}{false}
+\newcommand{\vSubtitle}{}
+\newcommand{\subtitle}[1]{
+  \renewcommand{\vSubtitle}{#1}
+}
+\newcommand{\vTitleimage}{null}
+\newcommand{\titleImage}[1]{
+  \renewcommand{\vTitleimage}{#1}
+}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{ifthen}
+\usepackage{hyperref}
+\usepackage[
+  nodocdata=true,% Specify whether document meta-data should be removedfrom the pdf.  Document meta-data includes:  (i) Title, (ii) Subject, (iii) Au-thor, and (iv) Keywords
+  noeditdata=true,% Specify  whether  meta-data  on  the  edit  and  creationdates  should  be  removed.   This  includes:  (i)  creation  date,  and  (ii)  mod-ification date.
+  noproducerdata=true,% Specify whether meta-data on the pdf-producingapplication should be removed. This includes: (i) Creator, and (ii) Producer
+  noptexdata=true,% Specify  whether  the  PTEX  meta-data  entries  shouldbe suppressed.  This includes:  (i) PTEX.Fullbanner,  (ii) PTEX.FileName,(iii) PTEX.PageNumber, and (iv) PTEX.InfoDict.
+  nopdftrailerid=true% Specify whether the pdfrailerid should be omitted
+]{pdfprivacy}
+\usepackage[a4paper]{geometry}
+\usepackage{datetime}
+\usepackage[margin=1em, font=small,labelfont=it]{caption}
+\usepackage{graphicx}
+\usepackage{mathpazo} % use palatino
+\usepackage[scaled]{helvet} % helvetica
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Design
+\input{.TEX/design}
+
+% Addons
+\input{.TEX/blackout}
