@@ -6,6 +6,8 @@ all: pdftex
 .PHONY: pdftex
 pdftex: install
 	pdflatex $(TEMPLATENAME).tex
+	bibtex $(TEMPLATENAME)
+	pdflatex $(TEMPLATENAME).tex
 
 .PHONY: install
 install: installPDFPrivacy

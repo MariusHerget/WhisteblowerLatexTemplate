@@ -11,9 +11,12 @@
 
 % Packages
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english,ngerman]{babel}
 \usepackage{ifthen}
 \usepackage{hyperref}
+\usepackage{parskip}
 \usepackage[
   nodocdata=true,% Specify whether document meta-data should be removedfrom the pdf.  Document meta-data includes:  (i) Title, (ii) Subject, (iii) Au-thor, and (iv) Keywords
   noeditdata=true,% Specify  whether  meta-data  on  the  edit  and  creationdates  should  be  removed.   This  includes:  (i)  creation  date,  and  (ii)  mod-ification date.
@@ -24,14 +27,29 @@
 \usepackage[a4paper]{geometry}
 \usepackage{datetime}
 \usepackage[margin=1em, font=small,labelfont=it]{caption}
-\usepackage{graphicx}
+\usepackage{graphicx,subfig,wrapfig}
 \usepackage{mathpazo} % use palatino
 \usepackage[scaled]{helvet} % helvetica
 \usepackage{microtype}
 \usepackage{amsmath}
-\usepackage{subfigure}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{enumitem}
+
+% Quotes
+\usepackage{float}
+\newfloat{floatquote}{tbp}{loq}
+\floatname{floatquote}{Quote}
+\usepackage{caption}
+\captionsetup{font =small, format = hang}
+\usepackage{cleveref}
+\crefname{floatquote}{quote}{quotes}
+\Crefname{floatquote}{Quote}{Quotes}
+
+% Sources
+\usepackage{csquotes}
+\usepackage[style=verbose-ibid,backend=bibtex]{biblatex}
+\bibliography{lib/sources}
 
 % Design
 \input{.TEX/design}
